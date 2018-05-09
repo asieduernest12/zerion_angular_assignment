@@ -1,8 +1,8 @@
 # Getting project ready
 -----------------------
 
-## Step 1: run *npm install*
-## Step 2: run *npm start*
+## Step 1: run *yarn install* unless you do not have yarn, in that case run *npm install
+## Step 2: run *yarn start* unless you do not have yarn, in that case run *npm start*
 ## Step 3: open *http://localhost:8080* in a web browser
 
 Thats all
