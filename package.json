@@ -2,20 +2,22 @@
   "name": "zerion-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts":{
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp-dev-win": "start \"gulp_build_components\"  gulp --gulpfile=gulp.components.js watch & title components & start \"gulp_build_app.js\"  gulp --gulpfile=gulp.app.js watch & start \"gulp_build_styles\" gulp --gulpfile=gulp.styles.js watch",
-    "gulp-dev-prod": "start \"gulp_build_components\"  gulp --gulpfile=gulp.components.js watch & title components & start \"gulp_build_app.js\"  gulp --gulpfile=gulp.app.js  & start \"gulp_build_styles\" gulp --gulpfile=gulp.styles.js",
-    "gulp-unix-prod": "  gulp --gulpfile=gulp.components.js   &   gulp --gulpfile=gulp.app.js  &  gulp --gulpfile=gulp.styles.js",
-    "serve" : "cd app & live-server "
+    "gulp-dev-win": "start \"gulp_build_components\"  gulp --gulpfile=gulp.components.js watch & title components & start \"gulp_build_app.js\"  gulp --gulpfile=gulp.app.js  & start \"gulp_build_styles\" gulp --gulpfile=gulp.styles.js",
+    "gulp-prod": "  gulp --gulpfile=gulp.components.js   &   gulp --gulpfile=gulp.app.js  &  gulp --gulpfile=gulp.styles.js",
+    "serve" : "cd app & live-server ",
+    "postinstall": "bower install",
+    "start": "npm run gulp-prod & npm run serve"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^",
     "gulp": "^3.9.1",
     "laravel-elixir": "^6.0.0-18",
     "laravel-elixir-config": "^1.1.2"
   },
-  "devDependencies": {},
   "author": "",
   "license": "ISC"
 }
