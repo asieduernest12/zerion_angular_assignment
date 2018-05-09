@@ -19,19 +19,21 @@
     }
 
     function getRecord(record_id){
-      return Restangular.one('record',record_id);
+      return Restangular.one('records',record_id).get();
     }
 
     function deleteRecord(record_id){
-      return Restangular.remove('record',record_id);
+      return Restangular.one('records',record_id).remove();
     }
 
-    function updateRecord(){
-
+    function updateRecord(record){
+      console.log('performing update');
+      return Restangular.one('records',record._id).customPUT(record);
     }
 
-    function createRecord(){
-
+    function createRecord(record){
+      console.log('performing create');
+      return Restangular.all('records').post(record);
     }
   }
 })();

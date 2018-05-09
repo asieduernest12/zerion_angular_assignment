@@ -10,19 +10,27 @@
 
   function routerConfig($urlRouterProvider,$stateProvider){
     $stateProvider
-    .state('tile_view',{
+    .state('records',{
+      "url": "/records",
+      "template": "<records-home-view-cmp></records-home-view-cmp>"
+    })
+    .state('records.tile_view',{
       'url':'/tile_view',
       'template': '<home-page-tile-cmp></home-page-tile-cmp>'
     })
-    .state('table_view',{
+    .state('records.table_view',{
       'url':'/table_view',
       'template': '<home-page-table-cmp></home-page-table-cmp>'
     })
-    .state('details_page',{
-      'url':'/:document_id/details',
-      'template': '<document-detail-cmp></document-detail-cmp>'
+    .state('records.create_page',{
+      'url':'/create',
+      'template': '<create-detail-record-cmp></create-detail-record-cmp>'
+    })
+    .state('records.details_page',{
+      'url':'/:record_id/detail',
+      'template': '<create-detail-record-cmp></create-detail-record-cmp>'
     });
 
-    $urlRouterProvider.otherwise('table_view')
+    $urlRouterProvider.otherwise('records');
   }
 })();

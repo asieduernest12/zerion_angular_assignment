@@ -1,0 +1,51 @@
+//this file has .html extension to enable html editor features during coding
+'use strict';
+
+(()=>{
+  angular.module('zerionApp')
+
+  .constant('homePageTableTemplate',
+  `
+  <div class="col-md-12" layout='column'>
+
+    <md-content flex layout='row'>
+      <span flex></span>
+      <md-button class="md-default md-raised" layout-align='end center' ng-click='delete_multiple()'>
+        <md-icon class="material-icons">delete_forever</md-icon>
+        DELETE DOCUMENT
+      </md-button>
+    </md-content>
+
+    <div class="table-responsive">
+      <table class="table table-stripped col-md-12">
+        <thead>
+          <tr>
+            <td>check</td>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Image Urls</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr ng-repeat="(index,record) in records">
+            <td>
+              <md-checkbox name='{{index}}_check' ng-model="record.deletable" aria-label="Checkbox 1">
+              </md-checkbox>
+            </td>
+            <td>
+              <a ui-sref='records.details_page({"record_id":"{{record._id}}"})'>
+                <md-button class="md-raised md-primary">{{record.name}}</md-button>
+              </a>
+            </td>
+            <td>{{record.description}}</td>
+            <td>
+              <span ng-repeat='img in record.imgs'>{{img.url}}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  `)
+})();

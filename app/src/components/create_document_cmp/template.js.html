@@ -1,0 +1,69 @@
+//html for create page wrapped in angular constant js code
+'use strict';
+
+(()=>{
+  angular.module('zerionApp')
+
+  .constant('createDetailRecordTemplate',
+  `
+  <md-content layout='column' layout-padding>
+    <form name'new_record_form' ng-submit='submit()'>
+      <legend>Document details</legend>
+      <md-content class="md-no-momentum" layout-align='space-around' ng-submit='submit()'>
+        <md-input-container md-no-float class="md-icon-float md-block">
+          <!-- Use floating label instead of placeholder -->
+          <label>Name</label>
+          <!-- <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon> -->
+          <input ng-model="new_record.name" type="text" ng-required='true' autofocus>
+        </md-input-container>
+
+        <md-input-container md-no-float class="md-block">
+          <label>Description</label>
+
+          <!-- <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon> -->
+          <input ng-model="new_record.description" type="text"  ng-required='true'>
+        </md-input-container>
+
+        <md-card layout='column'>
+          <md-card-content layout='row'>
+
+            <md-content flex>
+              <legend>Image URLs</legend>
+              <md-input-container class="md-block" ng-repeat='(index,img) in new_record.imgs'>
+
+                <!-- Use floating placeholder instead of label -->
+                <!-- <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon> -->
+                <input type="text" ng-required="true" ng-model='img.url' name='{{index}}_input'>
+              </md-input-container>
+            </md-content>
+
+            <md-content flex='10' layout-align='center center'layout='column'>
+              <md-button ng-click='add_extra_img()'>
+                <md-icon class='material-icons'>add</md-icon>
+                </span>
+              </md-button>
+              <md-button ng-click='remove_last_img()' ng-show='new_record.imgs.length > 1'>
+                <md-icon class='material-icons'>remove</md-icon>
+                </span>
+              </md-button>
+            </md-content>
+          </md-card-content>
+
+
+        </md-card>
+
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+
+          <a onclick='window.history.back()'>
+            <md-button class='md-primary'>Back</md-button>
+          </a>
+
+          <md-button type='submit' class="md-raised md-primary" >Save</md-button>
+
+        </section>
+
+      </md-content>
+    </form>
+  </md-content>
+  `);
+})();

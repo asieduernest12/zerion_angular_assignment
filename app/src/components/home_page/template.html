@@ -1,0 +1,49 @@
+// template embedded in directive
+'use strict';
+
+(()=>{
+  var homeTemplate = `
+
+  <md-content>
+
+    <md-content>
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-sref="records"  name="Tile">
+                <i class="fa fa-pen" aria-hidden="false"></i>
+                Documents
+            </md-nav-item>
+            <span flex></span>
+            <md-nav-item md-nav-sref="records.tile_view"  name="Tile">
+                <md-icon class="material-icons">view_module</md-icon>
+                TILE VIEW
+            </md-nav-item>
+            <md-nav-item md-nav-sref="records.table_view"  name="Tile">
+                <md-icon class="material-icons">list</md-icon>
+                LIST VIEW
+            </md-nav-item>
+            <md-nav-item md-nav-sref="records.create_page"  name="Tile">
+                <md-icon class='material-icons'>add</md-icon>
+                NEW DOCUMENT
+            </md-nav-item>
+
+        </md-nav-bar>
+
+        <md-content>
+
+          <ui-view></ui-view>
+
+        </md-content>
+    </md-content>
+  </md-content>
+  `;
+  angular.module('zerionApp')
+
+  .directive('recordsHomeViewCmp',[recordsHomeViewCmp]);
+
+  function recordsHomeViewCmp(){
+    return {
+      restrict: 'E',
+      template: homeTemplate
+    }
+  }
+})();

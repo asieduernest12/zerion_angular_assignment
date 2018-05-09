@@ -1,0 +1,36 @@
+//template for tile view
+'use strict';
+
+(()=>{
+  angular.module('zerionApp')
+
+  .constant('homePageTileTemplate',
+  `
+  <md-content>
+    <md-content class="md-padding" layout-xs="column" layout="row">
+      <div flex-xs flex-gt-xs="33" layout="column" ng-repeat='(r_index,record) in records'>
+        <md-card>
+          <img ng-src="{{img.url}}" ng-repeat='(i_index,img) in record.imgs' class="md-card-image" alt="Washed Out">
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-headline">{{record.name}}</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-card-content>
+            <p>
+              {{record.description}}
+            </p>
+
+          </md-card-content>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary" ui-sref='records.details_page({"record_id":"{{record._id}}"})'>Details</md-button>
+            <md-button>
+              <md-icon class="material-icons" ng-click='delete_one(record)'>delete_forever</md-icon>
+              Delete
+            </md-button>
+          </md-card-actions>
+        </md-card>
+      </md-content>
+      `
+      );
+    })();
