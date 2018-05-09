@@ -31,6 +31,6 @@
       'template': '<create-detail-record-cmp></create-detail-record-cmp>'
     });
 
-    $urlRouterProvider.otherwise('records');
+    $urlRouterProvider.otherwise('/records/tile_view');
   }
 })();

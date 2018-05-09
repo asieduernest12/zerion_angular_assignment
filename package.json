@@ -2,18 +2,18 @@
   "name": "zerion-demo",
   "version": "1.0.0",
   "description": "",
-  "scripts":{
+  "main": "server.js",
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp-dev-win": "start \"gulp_build_components\"  gulp --gulpfile=gulp.components.js watch & title components & start \"gulp_build_app.js\"  gulp --gulpfile=gulp.app.js watch & start \"gulp_build_styles\" gulp --gulpfile=gulp.styles.js watch",
     "gulp-dev-win": "start \"gulp_build_components\"  gulp --gulpfile=gulp.components.js watch & title components & start \"gulp_build_app.js\"  gulp --gulpfile=gulp.app.js  & start \"gulp_build_styles\" gulp --gulpfile=gulp.styles.js",
     "gulp-prod": "  gulp --gulpfile=gulp.components.js   &   gulp --gulpfile=gulp.app.js  &  gulp --gulpfile=gulp.styles.js",
-    "serve" : "cd app & live-server ",
+    "serve": "cd app & live-server",
     "postinstall": "bower install",
-    "start": "npm run gulp-prod & npm run serve"
+    "start": "npm run gulp-prod & node server.js"
   },
   "dependencies": {},
   "devDependencies": {
-    "live-server": "^",
+    "express": "^4.16.3",
     "gulp": "^3.9.1",
     "laravel-elixir": "^6.0.0-18",
     "laravel-elixir-config": "^1.1.2"
