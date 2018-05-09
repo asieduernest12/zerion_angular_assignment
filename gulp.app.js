@@ -22,8 +22,8 @@ watch_files = [
   "./app/src/**/config.js",
   "./app/src/**/router.js",
   "./app/src/**/run.js",
-  "./app/src/**/*.html",
-  "./app/src/**/*.js",
+  "./app/src/**/**.html",
+  "./app/src/**/**.js",
 ];
 
 elixir(function(mix) {
