@@ -13,6 +13,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "bower": "^1.8",
     "express": "^4.16.3",
     "gulp": "^3.9.1",
     "laravel-elixir": "^6.0.0-18",
