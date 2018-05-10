@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp-dev-win": "start \"gulp_build_components\"  gulp --gulpfile=gulp.components.js watch & title components & start \"gulp_build_app.js\"  gulp --gulpfile=gulp.app.js  & start \"gulp_build_styles\" gulp --gulpfile=gulp.styles.js",
-    "gulp-prod": "  gulp --gulpfile=gulp.components.js   &   gulp --gulpfile=gulp.app.js  &  gulp --gulpfile=gulp.styles.js",
+    "gulp-prod": "  gulp --gulpfile=gulp.components.js scripts  &   gulp --gulpfile=gulp.app.js scripts  &  gulp --gulpfile=gulp.styles.js  styles",
     "serve": "cd app & live-server",
     "postinstall": "bower install",
     "start": "npm run gulp-prod & node server.js"
