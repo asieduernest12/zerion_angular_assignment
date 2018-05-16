@@ -26,8 +26,8 @@
           </md-card-content>
           <md-card-actions layout="row" layout-align="end center">
             <md-button class="md-raised md-primary" ui-sref='records.details_page({"record_id":"{{record._id}}"})'>Details</md-button>
-            <md-button>
-              <md-icon class="material-icons" ng-click='delete_one(record)'>delete_forever</md-icon>
+            <md-button ng-click='delete_one(record)'>
+              <md-icon class="material-icons" >delete_forever</md-icon>
               Delete
             </md-button>
           </md-card-actions>

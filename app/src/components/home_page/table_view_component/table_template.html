@@ -10,7 +10,7 @@
 
     <md-content flex layout='row'>
       <span flex></span>
-      <md-button class="md-default md-raised" layout-align='end center' ng-click='delete_multiple()'>
+      <md-button class="md-default md-raised" layout-align='end center' ng-click='delete_multiple()' ng-disabled='!marked_for_deletion_counter'>
         <md-icon class="material-icons">delete_forever</md-icon>
         DELETE DOCUMENT
       </md-button>
@@ -30,7 +30,7 @@
         <tbody>
           <tr ng-repeat="(index,record) in records">
             <td>
-              <md-checkbox name='{{index}}_check' ng-model="record.deletable" aria-label="Checkbox 1">
+              <md-checkbox name='{{index}}_check' ng-model="record.deletable" aria-label="Checkbox 1" ng-click='count_records_marked_for_deletion()'>
               </md-checkbox>
             </td>
             <td>
