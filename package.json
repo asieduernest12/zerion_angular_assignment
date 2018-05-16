@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp-dev-win": "start \"gulp_build_components\"  gulp --gulpfile=gulp.components.js watch & title components & start \"gulp_build_app.js\"  gulp --gulpfile=gulp.app.js  & start \"gulp_build_styles\" gulp --gulpfile=gulp.styles.js",
+    "gulp-dev-win": "start \"gulp_build_components\"  gulp --gulpfile=gulp.components.js watch & start \"gulp_build_app.js\"  gulp --gulpfile=gulp.app.js watch & start \"gulp_build_styles\" gulp --gulpfile=gulp.styles.js watch",
     "gulp-prod": "  gulp --gulpfile=gulp.components.js scripts  &   gulp --gulpfile=gulp.app.js scripts  &  gulp --gulpfile=gulp.styles.js  styles",
     "serve": "cd app & live-server",
     "postinstall": "bower install",

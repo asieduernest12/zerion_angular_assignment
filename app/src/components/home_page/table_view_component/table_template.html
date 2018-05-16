@@ -38,7 +38,7 @@
                 <md-button class="md-raised md-primary">{{record.name}}</md-button>
               </a>
             </td>
-            <td>{{record.description}}</td>
+            <td>{{record.description | limitTo: 120}}<span ng-if='record.description.length > 120'>...</span</td>
             <td>
               <span ng-repeat='img in record.imgs'>{{img.url}}</span>
             </td>

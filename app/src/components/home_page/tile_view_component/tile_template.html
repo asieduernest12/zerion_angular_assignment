@@ -7,8 +7,9 @@
   .constant('homePageTileTemplate',
   `
   <md-content>
-    <md-content class="md-padding" layout-xs="column" layout="row">
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
       <div flex-xs flex-gt-xs="33" layout="column" ng-repeat='(r_index,record) in records'>
+
         <md-card>
           <img ng-src="{{img.url}}" ng-repeat='(i_index,img) in record.imgs' class="md-card-image" alt="Washed Out">
           <md-card-title>
@@ -18,8 +19,9 @@
           </md-card-title>
           <md-card-content>
             <p>
-              {{record.description}}
+              {{record.description | limitTo: 120}} <span ng-if='record.description.length > 120'>...</span>
             </p>
+
 
           </md-card-content>
           <md-card-actions layout="row" layout-align="end center">
@@ -30,7 +32,10 @@
             </md-button>
           </md-card-actions>
         </md-card>
-      </md-content>
-      `
-      );
-    })();
+
+      </div>
+    </md-content>
+  </md-content>
+  `
+  );
+})();
