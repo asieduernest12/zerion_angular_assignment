@@ -1,3 +1,9 @@
+## Introduction
+This is an application build to interact with zerion api to save and load images
+The application is built using angularjs and angular material themes for the ui
+
+![Live Project](https://jolly-fermat-f37a18.netlify.com/#!/records/tile_view)
+
 # Getting project ready
 -----------------------
 
